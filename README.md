@@ -14,6 +14,7 @@ IMpack is a data logging IMU designed for research applications where sampling r
 
 # Instructions for use
 
+- flashing the board (STLink, tag-connect)
 - charging (battery type, charge rate, battery life)
 - SD card (we use SanDisk industrial cards for their low latency)
 - indicator led sequences
