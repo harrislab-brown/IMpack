@@ -25,6 +25,13 @@ IMpack is a data logging IMU designed for research applications where sampling r
 # Hardware design
 
 - list of main chips and their function
+  - STM32F4 microcontroller (we use SDIO, SPI, NVIC, USB-FS, SWD, I2C hardware)
+  - MCP73871 battery charge controller
+  - TLV70033 LDO regulator
+  - DM3D-SF micro SD card holder (most compact I could find)
+  - IIS3DWB super high speed accelerometer
+  - ADXL373 high g range accelerometer
+  - LSM6DSO32 combined gyroscope and accelerometer with +/- 32 g range
 - discussion of overall board design (4 layer, 2-sided assembly, mounting surfaces)
 - discussion of interchangeable IMU chips
 - ECAD and MCAD files (hole pattern drawing)
