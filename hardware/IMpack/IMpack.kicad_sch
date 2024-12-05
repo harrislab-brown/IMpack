@@ -1,0 +1,247 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "baa5d249-0e32-4d7b-a491-caae6610dbaf")
+	(paper "A")
+	(title_block
+		(title "STM32 Accelerometer")
+		(date "2023-12-14")
+		(rev "1.0")
+		(company "John Antolik")
+	)
+	(lib_symbols)
+	(sheet
+		(at 35.56 87.63)
+		(size 30.48 27.94)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "0d180e0f-e411-46d0-8bc8-03c1252e22f9")
+		(property "Sheetname" "Power"
+			(at 35.56 86.9184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 35.56 116.1546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMpack"
+				(path "/baa5d249-0e32-4d7b-a491-caae6610dbaf"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 69.85 87.63)
+		(size 30.48 27.94)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "105e4258-3528-46de-8083-2b511ee670d3")
+		(property "Sheetname" "Microcontroller"
+			(at 69.85 86.9184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Microcontroller.kicad_sch"
+			(at 69.85 116.1546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMpack"
+				(path "/baa5d249-0e32-4d7b-a491-caae6610dbaf"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 104.14 87.63)
+		(size 30.48 27.94)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "44882d6d-7f2c-4006-af27-b544577ac94a")
+		(property "Sheetname" "USB"
+			(at 104.14 86.9184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "USB.kicad_sch"
+			(at 104.14 116.1546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMpack"
+				(path "/baa5d249-0e32-4d7b-a491-caae6610dbaf"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 207.01 87.63)
+		(size 30.48 27.94)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "4942d6a3-0f82-49a1-8a82-57e98ce6c0f6")
+		(property "Sheetname" "Miscellaneous"
+			(at 207.01 86.9184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Miscellaneous.kicad_sch"
+			(at 207.01 116.1546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMpack"
+				(path "/baa5d249-0e32-4d7b-a491-caae6610dbaf"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 138.43 87.63)
+		(size 30.48 27.94)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "b0b4c45a-631f-4696-a394-cd776b11aed5")
+		(property "Sheetname" "microSD"
+			(at 138.43 86.9184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "microSD.kicad_sch"
+			(at 138.43 116.1546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMpack"
+				(path "/baa5d249-0e32-4d7b-a491-caae6610dbaf"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 87.63)
+		(size 30.48 27.94)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c4b9832e-4366-4d9e-9a23-05d06e7115b7")
+		(property "Sheetname" "Sensors"
+			(at 172.72 86.9184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Sensors.kicad_sch"
+			(at 172.72 116.1546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMpack"
+				(path "/baa5d249-0e32-4d7b-a491-caae6610dbaf"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
