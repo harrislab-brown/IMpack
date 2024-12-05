@@ -25,7 +25,7 @@ IMpack is a data logging IMU designed for research applications where sampling r
 # Hardware design
 
 - list of main chips and their function
-  - STM32F4 microcontroller (we use SDIO, SPI, NVIC, USB-FS, SWD, I2C hardware)
+  - STM32F405 microcontroller (we use SDIO, SPI, NVIC, USB-FS, SWD, I2C hardware)
   - MCP73871 battery charge controller
   - TLV70033 LDO regulator
   - DM3D-SF micro SD card holder (most compact I could find)
