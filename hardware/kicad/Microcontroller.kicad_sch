@@ -10246,7 +10246,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b8e8eea8-57cd-40ff-8a2a-393cd35f4d8d")
-		(property "Reference" "R?"
+		(property "Reference" "R202"
 			(at 142.4686 139.8016 0)
 			(effects
 				(font

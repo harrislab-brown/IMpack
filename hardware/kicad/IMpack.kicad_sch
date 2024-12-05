@@ -5,7 +5,7 @@
 	(uuid "baa5d249-0e32-4d7b-a491-caae6610dbaf")
 	(paper "A")
 	(title_block
-		(title "STM32 Accelerometer")
+		(title "IMpack")
 		(date "2023-12-14")
 		(rev "1.0")
 		(company "John Antolik")

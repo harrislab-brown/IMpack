@@ -3626,7 +3626,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "430608e7-4aec-463a-a86c-ddfc02186662")
-		(property "Reference" "R?"
+		(property "Reference" "R202"
 			(at 185.42 132.08 90)
 			(effects
 				(font
@@ -3927,7 +3927,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "55075c8a-b298-425a-b123-1687ee52a2f1")
-		(property "Reference" "R?"
+		(property "Reference" "R202"
 			(at 185.42 127 90)
 			(effects
 				(font
@@ -4789,7 +4789,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a4331ac3-fa9a-44c5-a735-0609e48e1f0a")
-		(property "Reference" "R?"
+		(property "Reference" "R202"
 			(at 185.42 137.16 90)
 			(effects
 				(font
