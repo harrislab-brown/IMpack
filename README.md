@@ -26,13 +26,19 @@ The IMpack battery can be charged using the micro USB port with the power switch
 
 ## SD card
 
-The IMpack logs data and reads in the recording parameters using a micro SD card. We use an [8 GB SanDisk Industrial](https://www.amazon.com/SanDisk-Industrial-MicroSDHC-SDSDQAF3-008G-I-Everything/dp/B085GL89HQ?th=1) card. The card should use the FAT32 format. The IMpack will operate in the top-level directory of the card so it is recommended to use an empty card without any important data. 
+The IMpack logs data and reads in the recording parameters using a micro SD card. We use an [8 GB SanDisk Industrial](https://www.amazon.com/SanDisk-Industrial-MicroSDHC-SDSDQAF3-008G-I-Everything/dp/B085GL89HQ?th=1) card. The card should be formatted as FAT32. The IMpack will operate in the top-level directory of the card so it is recommended to use an empty card without any important data. 
 
 The IMpack will likely work well with a variety of SD cards but an important factor to note is the write latency of the SD card. This specification is often provided as a generous upper bound so it is difficult to compare the real world performance of different SD cards based on their datasheets. If the real world write latency is too large, some IMU data can be lost during recording. In our testing the Impack with SanDisk Industrial cards we experience no data loss.
 
 ## Taking a recording
 
-indicator LED sequences
+With the IMpack connected to a power source (USB, battery or both), flip the power switch to the on position. The microcontroller will initialize the system and attempt to read in the settings file (more on that later). If the initialization is successful, the blue LED will blink twice. If no settings file is provided or the settings file is formatted incorrectly, the blue LED will blink 4 times. In this case the IMpack will write a correctly formatted default settings file to the card which can subsequently be tweaked by the user to configure the device. The blue LED should then begin flashing once every second, indicating that the device is in the idle state and ready to begin a recording. If instead there is a reeating sequence of 4 blinks, then the IMpack is in an error state (commonly due to a missing SD card).  
+
+When the IMpack is idle, press the button to begin a recording. If a delay is configured, the device will enter the setup state where it waits before recording. A repeating sequence of 2 blue blinks indicates that the IMpack is in the setup state. After the configured delay, the device will enter the armed state if the recording is configured to begin based on an acceleration trigger. A repeating sequence of 3 blinks indicates that the IMpack is in the armed state. Once the acceleration trigger is detected, the device will begin recording, as indicated by rapid blinking of the blue LED. The recording will stop either after the configured recording length, or when the user presses the button again. After the recording, if data formatting is enabled, the device will spend some time formatting the raw sensor data into a plain text CSV file. A sequence of 3 slow blinks will indicate this state. Finally the device will return to the idle state at which point a new recording can be started or the device can be powered off. When the IMpack is not in use, the power switch should be in the off position to avoid draining the battery.
+
+The recording sequence can be configured using the settings file and not all of the aforementioned states will necessarily be seen. For instance, if the delay before the armed state is set to zero and acceleration triggering is disabled, the device will immediately enter the recording state and begin logging data once the button is pressed. Similarly, the formatting state with 3 slow blinks will not be seen if data formatting is disabled, which may be desirable for long recordings at high data rates since the formatting can take a long time. In this case, the recording will be a binary file with the raw sensor data.
+ 
+(table of indicator LED sequences)
 
 ## Settings file
 
