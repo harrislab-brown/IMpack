@@ -1,22 +1,33 @@
 # IMpack
 
 <p align="center">
-  <img src="https://github.com/johntantolik/IMpack/blob/main/assets/IMpack.jpg" width="400">
+  <img src="https://github.com/johntantolik/IMpack/blob/main/assets/IMpack.png" width="1000">
 </p>
-
-(add better photographs)
 
 IMpack is a data logging IMU designed for research applications where sampling rate and compactness are paramount. The board costs less than $100 to fabricate and assemble and features an array of MEMS accelerometer chips which allow it to achieve a maximum acceleration measurement range of +/- 400 g, sampling rates up to 26.6 kHz and an angular rate measurement range of +/- 2000 deg/s. Compared to commercial options that use piezoresistive accelerometer elements and complicated analog frontends, the IMpack is very low cost while still achieving good signal-to-noise ratios via its highly selectable measurement range. The IMpack is 38 mm in diameter and approximately 13 mm thick including the single-cell LiPo battery which powers the device. The battery can be recharged using the micro USB port and the onboard charging circuitry. The microcontroller (STM32F4) gathers data from 3 high performance MEMS IMU chips and logs data to a micro SD card in a plain text CSV format. The parameters for recording including measurement range and sample rate are adjustable via a plain text settings file on the SD card which is used to configure the device on startup. An I2C expansion port allows the IMpack to interface with external sensors, or the synchronization of an array of IMpacks.
 
 # Capabilities
 
-(table of chip specs)
+The IMpack can be configured to sample data using any subset of the chips in its sensor array, including all of them at maximum sampling rate simultaneously. All of the chips used measure acceleration in three axes and the LSM6DSO32 contains a gyroscope as well. Sensor components with different strengths are chosen to improve the versatility of the device to different measurement situations. The MEMS IMU parts used and their primary specifications are listed in the following table.
 
-(frequency response plots)
+| Sensor | Sample rate (kHz) | Bandwidth (kHz) | Range | Bit depth |
+| :---: | :---: | :---: | :---: | :---: |
+| IIS3DWB | 26.6 | 6.3 | +/- 16 g | 16 |
+| LSM6DSO32 (accel.) | 6.66 | 3.33 | +/- 32 g | 16 |
+| LSM6DSO32 (gyro.) | 6.66 | 1.44 | +/- 2000 deg/s | 16 |
+| ADXL373 | 5.12 | 2.56 | +/- 400 g | 12 |
+
+The frequency responses of each of 10 IMpack test units are shown in the plots below for data gathered from each IMU chip on the PCB. More details regarding the test setup are available in the accompanying publication. The raw testing data are available in the data directory.
+
+<p align="center">
+  <img src="https://github.com/johntantolik/IMpack/blob/main/assets/response.png" width="1000">
+</p>
 
 # Instructions for use
 
-(usage flow diagram)
+<p align="center">
+  <img src="https://github.com/johntantolik/IMpack/blob/main/assets/usage.png" width="600">
+</p>
 
 ## Programming the board
 
@@ -44,13 +55,55 @@ The recording sequence can be configured using the settings file and not all of 
 
 ## Settings file
 
-(annotated settings file example)
+The settings.txt file on the SD card is used to configure the IMpack at startup. The sampling parameters for each IMU channel can be configured, as well as the overall recording parameters such as whether to wait for an acceleration trigger or whether to perform plain text formatting of the data file. An annotated example of the settings file is shown below describing each of the parameters and their allowed values. If a valid settings file is not found on startup, the IMpack will generate a default one on the SD card - this is the recommended way to get started with the configuration.
+
+```
+LSM6DSx_accel_enabled = 1  # enable or disable each measurement channel with values 1 or 0
+LSM6DSx_accel_odr_hz = 6660  # allowed values: 13, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660
+LSM6DSx_accel_range_g = 16  # allowed values: 4, 8, 16, 32
+LSM6DSx_accel_lpf = 2  # setting for the low pass filter, 2 means bandwidth = ODR / 2 and so on (same meaning for other the other accelerometers), allowed values: 2, 4, 10, 20, 45, 100, 200, 400, 800
+LSM6DSx_accel_offset_x_mg = 0  # these are DC offsets in milli-g, signed integer
+LSM6DSx_accel_offset_y_mg = 0
+LSM6DSx_accel_offset_z_mg = 0
+
+LSM6DSx_gyro_enabled = 1
+LSM6DSx_gyro_odr_hz = 6660  # allowed values: 13, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660
+LSM6DSx_gyro_range_dps = 2000  # allowed values: 125, 250, 500, 1000, 2000
+LSM6DSx_gyro_lpf = 2  # this is the bit value that is put in the chip register, consult table 60 in LSM6DSO32 data sheet, allowed values: 0, 1, 2, 3, 4, 5, 6, 7
+
+IIS3DWB_accel_enabled = 1
+IIS3DWB_accel_range_g = 16  # allowed values: 2, 4, 8, 16
+IIS3DWB_accel_lpf = 2  # allowed values: 4, 10, 20, 45, 100, 200, 400, 800
+IIS3DWB_accel_offset_x_mg = 0
+IIS3DWB_accel_offset_y_mg = 0
+IIS3DWB_accel_offset_z_mg = 0
+
+ADXL37x_accel_enabled = 1
+ADXL37x_accel_odr_hz = 5120  # allowed values: 320, 640, 1280, 2560, 5120
+ADXL37x_accel_lpf = 2  # allowed values: 2, 4, 8, 16, 32
+ADXL37x_accel_offset_x_mg = 0
+ADXL37x_accel_offset_y_mg = 0
+ADXL37x_accel_offset_z_mg = 0
+
+delay_before_armed_ms = 0  # how long to remain in the staging state in ms
+recording_length_ms = 5000  # how long to record for in ms
+data_formatting_enabled = 1  # if enabled, will create CSV files after each recording
+accel_trigger_enabled = 1  # once armed, the recording will start based on an acceleration trigger if enabled
+accel_trigger_on_any_axis = 1  # trigger if any axis exceeds the threshold if 1, else looks only for specific axis
+accel_trigger_axis = 2  # 0, 1, 2 for x, y, z, axis selection to trigger from
+accel_trigger_level_mg = 500  # level of the trigger in units of milli-g
+accel_trigger_rising_edge = 0  # select whether to trigger on rising or falling edge
+```
 
 ## Data format
 
-(add example scripts in MATLAB and python to parse both the binary and CSV data)
+When plain text data formatting is enabled, the IMpack will create a separate CSV file for each active channel from the recording. The columns for time stamps and axis measurements are labeled with units, so interpreting the file should be straightforward. The binary data files consist of sequences of data points which each consist of 12 bytes. Each data point contains the unsigned 32 bit time stamp in microseconds, 3 axes of signed 16 bit acceleration/angular rate data, and finally unsigned 16 bit data type tag to indicate which channel produced the data. Example scripts for parsing the binary data in MATLAB and Python are provided in the examples directory. 
 
 # Hardware design
+
+<p align="center">
+  <img src="https://github.com/johntantolik/IMpack/blob/main/assets/hardware design.png" width="600">
+</p>
 
 The board schematics, production files and KiCad 8 design files are available in the hardware directory. Design files for the mechanical assemblies into which we mount the IMpack are available in the mechanical directory. The PCB is 4 layers with double sided assembly. The main components and their functions are listed below. 
 
