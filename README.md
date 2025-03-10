@@ -43,7 +43,7 @@ The IMpack battery can be charged using the micro USB port with the power switch
 
 The IMpack logs data and reads in the recording parameters using a micro SD card. We use an [8 GB SanDisk Industrial](https://www.amazon.com/SanDisk-Industrial-MicroSDHC-SDSDQAF3-008G-I-Everything/dp/B085GL89HQ?th=1) card. The card should be formatted as FAT32. The IMpack will operate in the top-level directory of the card so it is recommended to use an empty card without any important data. 
 
-The IMpack will likely work well with a variety of SD cards but an important factor to note is the write latency of the SD card. This specification is often provided as a generous upper bound so it is difficult to compare the real world performance of different SD cards based on their datasheets. If the real world write latency is too large, some IMU data can be lost during recording. In our testing the Impack with SanDisk Industrial cards we experience no data loss.
+The IMpack will likely work well with a variety of SD cards but an important factor to note is the write latency of the SD card. This specification is often provided as a generous upper bound so it is difficult to compare the real world performance of different SD cards based on their datasheets. If the real world write latency is too large, some IMU data can be lost during recording. In our testing the IMpack with SanDisk Industrial cards we experience no data loss.
 
 ## Taking a recording
 
