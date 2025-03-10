@@ -8,4 +8,4 @@ Raw data files from the IMpack and enDAQ IMUs embedded in an aluminum impactor w
 
 ## Scripts
 
-The MATLAB scripts used to perform the frequency response testing of the IMpack units are included here. The script "frequency_sweep.m" is used to control the waveform generator and oscilloscope over their SCPI interfaces to perform a sweep over the test frequencies and stream reference accelerometer data from the oscilloscope. The script "process_IMpack_frequency_response.m" is used to process the test data and create the frequency response plots.
+The MATLAB scripts used to perform the frequency response testing of the IMpack units are included here. The script "frequency_sweep.m" is used to control the waveform generator and oscilloscope over their SCPI interfaces to perform a sweep over the test frequencies and stream reference accelerometer data from the oscilloscope. The script "process_IMpack_frequency_response.m" is used to process the test data and create the frequency response plots. Note that these scripts were used for our validation experiments only and MATLAB is not required in order to use the IMpack.
