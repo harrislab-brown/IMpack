@@ -1,6 +1,6 @@
 ## Frequency response data
 
-The raw data files from the frequency response testing are larger than 100 MB so cannot be uploaded here. A persistent link to these files in the Brown Digital Repository will be added shortly.
+The raw data files from the frequency response testing are larger than 100 MB so cannot be uploaded here. They are instead available in the [Brown Digital Repository](https://doi.org/10.26300/8bvm-y233).
 
 ## Water entry data
 
