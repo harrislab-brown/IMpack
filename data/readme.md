@@ -1,8 +1,8 @@
-## Frequency response
+## Frequency response data
 
 TODO: the raw data files for the frequency response are larger than 100 MB so not sure what to do with them
 
-## Water entry
+## Water entry data
 
 Raw data files from the IMpack and enDAQ IMUs embedded in an aluminum impactor with various nose shapes and water impact speeds are available. The number preceding "mps" in the file name is the impact speed in m/s. The next part of the file name decribes the nose geometry which is either a hemisphere or a cone whose included angle is specified. The overall diameter of the impactor is 44.45 mm and additional details can be found in the accompanying publication. The final number in the file name is the trial number and IMpack and enDAQ files with the same trial number correspond to simultaneous recordings. The enDAQ data files have .ide extension and can be opened and processed in enDAQ's free [lab software](https://endaq.com/pages/vibration-shock-analysis-software-endaq-slam-stick-lab?srsltid=AfmBOoo7xRbBNeMLJfOLlSteyIvGvib2A_wtY0az-d9iFSdC5y2pTeTemat). Only the sphere trials at 4 m/s are analyzed in the publication for brevity. 
 
