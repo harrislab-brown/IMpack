@@ -1,6 +1,6 @@
 ## Frequency response data
 
-TODO: the raw data files for the frequency response are larger than 100 MB so not sure what to do with them
+The raw data files from the frequency response testing are larger than 100 MB so cannot be uploaded here. A persistent link to these files in the Brown Digital Repository will be added shortly.
 
 ## Water entry data
 
