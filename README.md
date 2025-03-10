@@ -55,12 +55,12 @@ The recording sequence can be configured using the settings file and not all of 
 
 ## Settings file
 
-The settings.txt file on the SD card is used to configure the IMpack at startup. The sampling parameters for each IMU channel can be configured, as well as the overall recording parameters such as whether to wait for an acceleration trigger or whether to perform plain text formatting of the data file. An annotated example of the settings file is shown below describing each of the parameters and their allowed values. If a valid settings file is not found on startup, the IMpack will generate a default one on the SD card - this is the recommended way to get started with the configuration.
+The settings.txt file on the SD card is used to configure the IMpack at startup. The sampling parameters for each IMU channel can be configured, as well as the overall recording parameters such as whether to wait for an acceleration trigger or whether to perform plain text formatting of the data file. An annotated example of the default settings file is shown below describing each of the parameters and their allowed values. If a valid settings file is not found on startup, the IMpack will generate a default one on the SD card - this is the recommended way to get started with the configuration.
 
 ```
 LSM6DSx_accel_enabled = 1  # enable or disable each measurement channel with values 1 or 0
 LSM6DSx_accel_odr_hz = 6660  # allowed values: 13, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660
-LSM6DSx_accel_range_g = 16  # allowed values: 4, 8, 16, 32
+LSM6DSx_accel_range_g = 32  # allowed values: 4, 8, 16, 32
 LSM6DSx_accel_lpf = 2  # setting for the low pass filter, 2 means bandwidth = ODR / 2 and so on (same meaning for other the other accelerometers), allowed values: 2, 4, 10, 20, 45, 100, 200, 400, 800
 LSM6DSx_accel_offset_x_mg = 0  # these are DC offsets in milli-g, signed integer
 LSM6DSx_accel_offset_y_mg = 0
@@ -69,11 +69,11 @@ LSM6DSx_accel_offset_z_mg = 0
 LSM6DSx_gyro_enabled = 1
 LSM6DSx_gyro_odr_hz = 6660  # allowed values: 13, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660
 LSM6DSx_gyro_range_dps = 2000  # allowed values: 125, 250, 500, 1000, 2000
-LSM6DSx_gyro_lpf = 2  # this is the bit value that is put in the chip register, consult table 60 in LSM6DSO32 data sheet, allowed values: 0, 1, 2, 3, 4, 5, 6, 7
+LSM6DSx_gyro_lpf = 3  # this is the bit value that is put in the chip register, consult table 60 in LSM6DSO32 data sheet, allowed values: 0, 1, 2, 3, 4, 5, 6, 7
 
 IIS3DWB_accel_enabled = 1
 IIS3DWB_accel_range_g = 16  # allowed values: 2, 4, 8, 16
-IIS3DWB_accel_lpf = 2  # allowed values: 4, 10, 20, 45, 100, 200, 400, 800
+IIS3DWB_accel_lpf = 4  # allowed values: 4, 10, 20, 45, 100, 200, 400, 800
 IIS3DWB_accel_offset_x_mg = 0
 IIS3DWB_accel_offset_y_mg = 0
 IIS3DWB_accel_offset_z_mg = 0
@@ -88,8 +88,8 @@ ADXL37x_accel_offset_z_mg = 0
 delay_before_armed_ms = 0  # how long to remain in the staging state in ms
 recording_length_ms = 5000  # how long to record for in ms
 data_formatting_enabled = 1  # if enabled, will create CSV files after each recording
-accel_trigger_enabled = 1  # once armed, the recording will start based on an acceleration trigger if enabled
-accel_trigger_on_any_axis = 1  # trigger if any axis exceeds the threshold if 1, else looks only for specific axis
+accel_trigger_enabled = 0  # once armed, the recording will start based on an acceleration trigger if enabled
+accel_trigger_on_any_axis = 0  # trigger if any axis exceeds the threshold if 1, else if 0 looks only for specific axis
 accel_trigger_axis = 2  # 0, 1, 2 for x, y, z, axis selection to trigger from
 accel_trigger_level_mg = 500  # level of the trigger in units of milli-g
 accel_trigger_rising_edge = 0  # select whether to trigger on rising or falling edge
