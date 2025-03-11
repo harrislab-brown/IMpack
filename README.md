@@ -32,6 +32,7 @@ The frequency responses of each of 10 IMpack test units are shown in the plots b
 | Mounting screws | 4x M2 or #2 cap screws |
 | Micro SD card | SanDisk Industrial 8 GB |
 | LiPo battery | TinyCircuits ASR00003 |
+| Adhesive rubber battery padding | McMaster-Carr 1374N13 |
 | Programming cable | Tag-Connect TC2030 |
 | Programmer | STLINK-V3MINIE |
 
@@ -119,7 +120,7 @@ When plain text data formatting is enabled, the IMpack will create a separate CS
   <img src="https://github.com/johntantolik/IMpack/blob/main/assets/hardware design.png" width="600">
 </p>
 
-The board schematics, production files and KiCad 8 design files are available in the hardware directory. An enclosure or fixture is required to mount the IMpack depending on the application, which could be 3D printed or machined from metal in more stringent testing setups. Design files for the mechanical assemblies into which we mount the IMpack are available in the mechanical directory as examples. The PCB is 4 layers with double sided assembly. The main components and their functions are listed below. 
+The board schematics, production files and KiCad 8 design files are available in the hardware directory. An enclosure or fixture is required to mount the IMpack depending on the application, which could be 3D printed or machined from metal in more stringent testing setups. Design files for the mechanical assemblies into which we mount the IMpack are available in the mechanical directory as examples. In our use case, we apply an adhesive rubber pad to the battery which allows it to be firmly clamped into the battery pocket as the IMpack mounting screws are tightened. The PCB is 4 layers with double sided assembly. The main components and their functions are listed below. 
 
   - STM32F405 microcontroller (we use SDIO, SPI, NVIC, USB-FS, SWD, I2C hardware)
   - MCP73871 battery charge controller
