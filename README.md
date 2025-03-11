@@ -41,7 +41,7 @@ The frequency responses of each of 10 IMpack test units are shown in the plots b
   <img src="https://github.com/johntantolik/IMpack/blob/main/assets/usage.png" width="600">
 </p>
 
-This diagram illustrates the flow of operation of the IMpack. The red, orange and green LEDs are power indicators. The blue LED indicates the state of the device via its blink sequence, where the width of each marker in the diagram indicates the duration of the blink and the color indicates on or off. Once the device is powered up and initializes using the settings file on the SD card, pressing the button will begin and end a recording. Recordings can have a delayed start or acceleration trigger, or can stop after a predefined amount of time depending on the configuration as discussed in more detail later.   
+This diagram illustrates the flow of operation of the IMpack. The red, orange and green LEDs are power indicators. The blue LED indicates the state of the device via its periodic blink sequence, where the width of each marker in the diagram indicates the duration of the blink and the light blue color indicates the LED is on. Once the device is powered up and initializes using the settings file on the SD card, pressing the button will begin and end a recording. Recordings can have a delayed start or acceleration trigger, or can stop after a predefined amount of time depending on the configuration as discussed in more detail later.   
 
 ## Programming the board
 
