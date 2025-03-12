@@ -17,7 +17,7 @@ The IMpack can be configured to sample data using any subset of the chips in its
 | LSM6DSO32 (gyro.) | 6.66 | 1.44 | +/- 2000 deg/s | 16 |
 | ADXL373 | 5.12 | 2.56 | +/- 400 g | 12 |
 
-The frequency responses of each of 10 IMpack test units are shown in the plots below for data gathered from each IMU chip on the PCB. More details regarding the test setup will be available soon in the accompanying publication. The raw testing data are available in the data directory.
+The frequency responses of each of 10 IMpack test units are shown in the plots below for data gathered from each IMU chip on the PCB. More details regarding the test setup are available in the accompanying publication (pre-print in the article directory). The raw testing data are available in the data directory.
 
 <p align="center">
   <img src="https://github.com/johntantolik/IMpack/blob/main/assets/response.png" width="1000">
@@ -120,7 +120,7 @@ When plain text data formatting is enabled, the IMpack will create a separate CS
   <img src="https://github.com/johntantolik/IMpack/blob/main/assets/hardware design.png" width="600">
 </p>
 
-The board schematics, production files and KiCad 8 design files are available in the hardware directory. An enclosure or fixture is required to mount the IMpack depending on the application, which could be 3D printed or machined from metal in more stringent testing setups. Design files for the mechanical assemblies into which we mount the IMpack are available in the mechanical directory as examples. In our use case, we apply an adhesive rubber pad to the battery which allows it to be firmly clamped into the battery pocket as the IMpack mounting screws are tightened. The PCB is 4 layers with double sided assembly. The main components and their functions are listed below. 
+The board schematics, production files and KiCad 8 design files are available in the hardware directory. An enclosure or fixture is required to mount the IMpack depending on the application, which could be 3D printed or machined from metal in more stringent testing setups. Design files for the mechanical assemblies into which we mount the IMpack are available in the mechanical directory as examples. In our use case, we apply an adhesive rubber pad to the battery which allows it to be firmly clamped into the battery pocket as the IMpack mounting screws are tightened. The PCB is 4 layers with double sided assembly. The main components and their functions are listed below. A spreadsheet with all of the required components is available under hardware/production.
 
   - STM32F405 microcontroller (we use SDIO, SPI, NVIC, USB-FS, SWD, I2C hardware)
   - MCP73871 battery charge controller
