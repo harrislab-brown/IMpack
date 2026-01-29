@@ -46,7 +46,7 @@ This diagram illustrates the flow of operation of the IMpack. The red, orange an
 
 ## Programming the board
 
-The IMpack is programmed via Serial Wire Debug using an [STLINK-V3MINIE](https://www.mouser.com/ProductDetail/STMicroelectronics/STLINK-V3MINIE?qs=MyNHzdoqoQKcLQe5Jawcgw%3D%3D&mgh=1&utm_id=17222215321&gad_source=1&gclid=Cj0KCQiA3sq6BhD2ARIsAJ8MRwUawTum9u1zJQP-2fxdKjuHkomzrG7uCrwYJbI-F8R0_4U0DyUifOMaAq6kEALw_wcB) debugger and a [Tag-Connect TC2030](https://www.tag-connect.com/product/tc2030-idc-nl) cable. We use [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) to compile and launch the project. In the case of a failed flashing that results in an unresponsive microcontroller, the "boot" jumper on the top of the IMpack can be shorted at power up to initialize the microcontroller in boot mode and recover it.
+The IMpack is programmed via Serial Wire Debug using an [STLINK-V3MINIE](https://www.mouser.com/ProductDetail/STMicroelectronics/STLINK-V3MINIE?qs=MyNHzdoqoQKcLQe5Jawcgw%3D%3D&mgh=1&utm_id=17222215321&gad_source=1&gclid=Cj0KCQiA3sq6BhD2ARIsAJ8MRwUawTum9u1zJQP-2fxdKjuHkomzrG7uCrwYJbI-F8R0_4U0DyUifOMaAq6kEALw_wcB) debugger and a [Tag-Connect TC2030](https://www.tag-connect.com/product/tc2030-ctx-nl-stdc14-for-use-with-stm32-processors-with-stlink-v3) cable and [retaining clip](https://www.tag-connect.com/product/tc2030-retaining-clip-board-3-pack). We use [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) to compile and launch the project. In the case of a failed flashing that results in an unresponsive microcontroller, the "boot" jumper on the top of the IMpack can be shorted at power up to initialize the microcontroller in boot mode and recover it.
 
 ## Charging the battery
 
